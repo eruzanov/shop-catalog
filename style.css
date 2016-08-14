@@ -20,6 +20,17 @@ body
     color: #eee;
 }
 
+.main-menu.sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.main-menu.sticky + * {
+    margin-top: 36px;
+}
+
 .main-menu ul {
     margin: 0;
     padding: 0;
@@ -41,3 +52,8 @@ body
 .main-menu ul li:hover,
 .main-menu ul li.active
 { color: #fff; }
+
+.shop-catalog {
+    padding: 10px 0;
+    color: #cecece;
+}

@@ -1759,3 +1759,8 @@ function genegateListHTML ( list ) {
     }
     return ul;
 }
+
+window.addEventListener( 'scroll', function () {
+    var sticky = document.querySelector( '.main-menu' );
+    sticky.classList[ window.pageYOffset >= 136 ? 'add' : 'remove' ]( 'sticky' );
+} );
