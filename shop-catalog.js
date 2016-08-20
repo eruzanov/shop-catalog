@@ -32,23 +32,20 @@ function generateSubMenuContent ( list ) {
     return wrapper;
 }
 function generateSubMenu ( list ) {
-    var wrapper = document.createElement( 'div' ),
-        ul = document.createElement( 'ul' ),
-        li = document.createElement( 'li' );
-    wrapper.classList.add( 'sub-menu' );
-    ul.classList.add( 'sub-menu_list' );
-    li.classList.add( 'sub-menu_item' );
-    wrapper.appendChild( ul );
+    var frag = document.createDocumentFragment(),
+        a = document.createElement( 'a' );
+    a.href = '#';
+    a.classList.add( 'sub-menu_item' );
     for ( var i = 0, item; i < list.length; i++ ) {
-        item = li.cloneNode();
-        console.log( list[i] );
+        item = a.cloneNode();
         item.textContent = list[i].name;
-        if ( list[i].sub ) item.appendChild( generateSubMenuContent( list[i].sub ) );
-        ul.appendChild( item );
+        frag.appendChild( item );
     }
-    return wrapper;
+    console.log( frag );
+    return frag;
 }
-//document.querySelector( '.shop-catalog-menu' ).appendChild( generateSubMenu( shopCatalog ) );
+document.querySelector( '.sub-menu_list').innerHTML = '';
+document.querySelector( '.sub-menu_list' ).appendChild( generateSubMenu( shopCatalog ) );
 
 // set dimension for sub-menu
 var setDimension = ( function () {
