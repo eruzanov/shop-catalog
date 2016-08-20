@@ -19,27 +19,28 @@ body
     background-color: #0E6EB5;
     color: #eee;
 }
-
 .main-menu.sticky {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
 }
-
 .main-menu.sticky + * {
     margin-top: 36px;
 }
-
-.main-menu ul {
+.main-menu > ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    overflow: hidden;
 }
-
-.main-menu ul li {
+.main-menu > ul:after {
+    display: table;
+    content: " ";
+    clear: both;
+}
+.main-menu > ul > li {
     float: left;
+    position: relative;
     padding-right: 20px;
     height: 36px;
     line-height: 36px;
@@ -48,10 +49,54 @@ body
     color: #dedede;
     cursor: pointer;
 }
-
-.main-menu ul li:hover,
-.main-menu ul li.active
+.main-menu > ul > li:hover,
+.main-menu > ul > li.active
 { color: #fff; }
+
+
+.sub-menu {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: white;
+    color: #000;
+}
+.main-menu ul li:hover .sub-menu {
+    display: block;
+}
+.sub-menu_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.sub-menu_list .sub-menu_item {
+    width: 250px;
+}
+.sub-menu_content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 250px;
+    margin: 0;
+    padding: 0;
+    min-width: 700px;
+    list-style: none;
+    background-color: #ffffff;
+    border-left: 1px solid #000000;
+    overflow: scroll;
+}
+.sub-menu_content > ul {
+    float: left;
+    margin: 10px;
+    width: 250px;
+}
+.sub-menu_list li:hover {
+    color: #0E6EB5;
+}
+.sub-menu_list li:hover .sub-menu_content {
+    display: block;
+}
+
 
 .shop-catalog {
     padding: 10px 0;

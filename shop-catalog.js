@@ -1764,3 +1764,22 @@ window.addEventListener( 'scroll', function () {
     var sticky = document.querySelector( '.main-menu' );
     sticky.classList[ window.pageYOffset >= 136 ? 'add' : 'remove' ]( 'sticky' );
 } );
+
+
+var setDimension = ( function () {
+    var subMenu = document.querySelector( '.sub-menu' ),
+        subMenuContent = document.querySelectorAll( '.sub-menu_content' );
+    return function () {
+        var windowHeight = document.documentElement.clientHeight,
+            mainMenu = document.querySelector( '.main-menu' ),
+            offsetTop = mainMenu.getBoundingClientRect().top < 0 ? 0 : mainMenu.getBoundingClientRect().top,
+            height = windowHeight - mainMenu.offsetHeight - offsetTop - 30;
+        subMenu.style.height = height + 'px';
+        subMenuContent.forEach( function ( el ) {
+            el.style.height = height + 'px';
+        } );
+    };
+} )();
+window.addEventListener( 'scroll', setDimension );
+window.addEventListener( 'resize', setDimension );
+setDimension();
