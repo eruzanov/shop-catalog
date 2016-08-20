@@ -71,7 +71,8 @@ body
     box-sizing: border-box;
     width: 250px;
     border-right: 1px solid #0E6EB5;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .sub-menu_item {
     display: block;
@@ -91,7 +92,8 @@ body
     float: left;
     width: 750px;
     color: #0E6EB5;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .sub-menu_content_item {
     float: left;
