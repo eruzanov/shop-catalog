@@ -106,7 +106,9 @@ body
     display: block;
 }
 .sub-menu_content_item ul { border-bottom: 1px solid #0E6EB5; }
-.sub-menu_content_item:last-child ul { border-bottom: 0; }
+.sub-menu_content_item:last-child ul,
+.sub-menu_content_item:last-child .sub-menu_content_item-title
+{ border-bottom: 0; }
 .sub-menu_content_item-title {
     padding: 0 20px;
     line-height: 35px;
