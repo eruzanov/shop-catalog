@@ -102,9 +102,9 @@ body
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.sub-menu_item:hover .sub-menu_content {
-    display: block;
-}
+/*.sub-menu_item:hover .sub-menu_content {*/
+    /*display: block;*/
+/*}*/
 .sub-menu_content_item ul { border-bottom: 1px solid #0E6EB5; }
 .sub-menu_content_item:last-child ul,
 .sub-menu_content_item:last-child .sub-menu_content_item-title
