@@ -9,7 +9,7 @@ body
 
 .header {
     height: 136px;
-    background-image: url( logo.png );
+    background-image: url(../logo.png);
     background-repeat: no-repeat;
     background-position: 6% 50%;
 }
@@ -116,7 +116,7 @@ body
     color: #0E6EB5;
 }
 .sub-menu_content_item-title:hover,
-.sub-menu_content_item ul li:hover
+.sub-menu_content_item ul li:hover1
 { text-decoration: underline; }
 
 .shop-catalog {
